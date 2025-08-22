@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Grammar Proficiency Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a4b8c;
+            --accent: #4caf50;
+            --secondary: #d32f2f;
+            --bg-light: #f5f7fa;
+            --dark: #1f2937;
+            --white: #ffffff;
+            --gray-600: #4b5563;
+            --light-blue: #e3f2fd;
+            --light-green: #e8f5e9;
+            --light-pink: #fce4ec;
+            --yellow: #fff9c4;
+            --orange: #ffecb3;
+            --purple: #f3e5f5;
+            --gold: #ffd54f;
+            --blue: #42a5f5;
+            --red: #ef5350;
+            --success: #388e3c;
+            --error: #d32f2f;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--bg-light); 
+            color: var(--dark); 
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+        }
+
+        /* Urdu Font */
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 24px;
+            line-height: 1.8;
+            text-align: right;
+            direction: rtl;
+        }
+
+        /* Header */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 40px; 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(20px);
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 30px auto;
+            gap: 25px;
+            padding: 0 20px;
+            min-height: 80vh;
+        }
+
+        /* Welcome Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: scale(1);
+            transition: transform 0.3s;
+            border: 4px solid var(--accent);
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .modal-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(27, 100, 17, 0.3);
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(27, 100, 17, 0.4);
+        }
+
+        .test-info {
+            background: var(--light-blue);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+
+        /* Login Screen */
+        .login-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary);
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 18px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-size: 16px;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(27, 100, 17, 0.3);
+        }
+
+        .login-btn:disabled {
+            background: #e5e7eb;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .login-btn:not(:disabled):hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(27, 100, 17, 0.4);
+        }
+
+        /* Instructions */
+        .instructions-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--accent);
+        }
+
+        .instructions-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .instructions-list {
+            list-style-type: none;
+            margin-bottom: 35px;
+        }
+
+        .instructions-list li {
+            margin-bottom: 15px;
+            padding: 15px 15px 15px 60px;
+            position: relative;
+            font-size: 1.1rem;
+            background: var(--light-blue);
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .instructions-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            background: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Timer */
+        .timer-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+        }
+
+        .progress-container {
+            width: 200px;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent), #2e7d32);
+            width: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Questions Panel */
+        .questions-panel {
+            flex: 1;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary);
+        }
+
+        .question-number {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding: 15px;
+            background: var(--light-blue);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            padding: 15px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 18px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .option:hover {
+            background: var(--light-green);
+            border-color: var(--accent);
+        }
+
+        .option.selected {
+            background: var(--light-green);
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+        }
+
+        .option .option-label {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 15px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .option.selected .option-label {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .nav-btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+
+        .nav-btn.prev {
+            background: #e5e7eb;
+            color: var(--dark);
+        }
+
+        .nav-btn.next {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 75, 140, 0.3);
+        }
+
+        .nav-btn.submit {
+            background: linear-gradient(135deg, var(--secondary), #b71c1c);
+            color: white;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+            border: 3px solid var(--accent);
+        }
+
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .grid-item {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            background: #e5e7eb;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .grid-item:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .grid-item.answered {
+            background: var(--accent);
+            color: white;
+        }
+
+        .grid-item.current {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+
+        .test-info {
+            background: var(--light-green);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 16px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+
+        /* Results Screen */
+        .results-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 50px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary);
+        }
+
+        .results-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .score-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .score-value {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        .solution-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--light-blue);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .solution-title {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .solution-content {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .solution-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Floating shapes */
+        .shape { 
+            position: absolute; 
+            opacity: 0.15; 
+            animation: float 6s ease-in-out infinite; 
+            z-index: -1;
+        }
+
+        .shape.circle { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            background: var(--accent); 
+            top: 10%; 
+            left: 5%; 
+        }
+
+        .shape.square { 
+            width: 120px; 
+            height: 120px; 
+            background: var(--blue); 
+            bottom: 15%; 
+            right: 10%; 
+            border-radius: 20px;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 100px solid var(--primary);
+            top: 20%;
+            right: 20%;
+            animation-delay: -2s;
+        }
+
+        @keyframes float { 
+            0%, 100% { transform: translateY(0) rotate(0deg); } 
+            50% { transform: translateY(-20px) rotate(5deg); } 
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .question-grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modal-title {
+                font-size: 2rem;
+            }
+            
+            .login-container, .instructions-container, .results-container {
+                padding: 25px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .question-text {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .question-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .timer-container {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .progress-container {
+                width: 150px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-top: 30px;
+            background: rgba(255,255,255,0.8);
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(76, 175, 80, 0.2);
+            border-top: 5px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 40px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background shapes -->
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-language"></i>
+            </div>
+            <div>
+                <div class="logo-text">Urdu Grammar Test</div>
+                <div class="logo-subtitle">By Symbiotic Learning</div>
+            </div>
+        </div>
+        
+        <div class="timer-container" id="timerContainer" style="display:none;">
+            <div class="timer">
+                <i class="fas fa-clock"></i>
+                <span id="time">18:00</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Welcome Modal -->
+    <div class="modal-overlay" id="welcomeModal">
+        <div class="modal-content">
+            <h1 class="modal-title">Urdu Grammar Proficiency Test</h1>
+            <p class="modal-subtitle">This assessment evaluates your understanding of Urdu grammar rules and concepts. Approach with confidence—this is an opportunity to demonstrate your knowledge and identify areas for growth.</p>
+            
+            <div class="test-info">
+                <div class="info-title">Test Information</div>
+                <div class="info-item">
+                    <span>Total Questions:</span>
+                    <span>10</span>
+                </div>
+                <div class="info-item">
+                    <span>Duration:</span>
+                    <span>18 minutes</span>
+                </div>
+                <div class="info-item">
+                    <span>Topics Covered:</span>
+                    <span>Urdu grammar concepts</span>
+                </div>
+                <div class="info-item">
+                    <span>Scoring:</span>
+                    <span>1 mark per question</span>
+                </div>
+            </div>
+            
+            <button class="start-btn" id="startBtn">Begin Your Assessment</button>
+        </div>
+    </div>
+    
+    <!-- Login Screen -->
+    <div class="container" id="loginScreen" style="display:none;">
+        <div class="login-container">
+            <h2 class="login-title">Candidate Verification</h2>
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" id="nameInput" placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Access Code</label>
+                <input type="password" class="form-input" id="passcodeInput" placeholder="Enter your secure passcode">
+            </div>
+            <button class="login-btn" id="loginBtn" disabled>Authenticate & Continue</button>
+        </div>
+    </div>
+    
+    <!-- Instructions Screen -->
+    <div class="container" id="instructionsScreen" style="display:none;">
+        <div class="instructions-container">
+            <h2 class="instructions-title">Test Guidelines</h2>
+            <ul class="instructions-list">
+                <li>You have <strong>18 minutes</strong> to complete all 10 questions. The timer will be visible throughout the test.</li>
+                <li>This assessment covers various Urdu grammar concepts.</li>
+                <li>Each question carries equal weight (1 mark). There is no penalty for incorrect answers.</li>
+                <li>Use the question palette to navigate between questions. Answered questions will be highlighted in green.</li>
+                <li>You can change your answers at any time before submission by returning to the question.</li>
+                <li>Click the "Submit Test" button when you have completed all questions. You can also submit early if needed.</li>
+                <li>Do not refresh the page or close your browser during the test, as this will terminate your session.</li>
+                <li>After submission, you'll receive detailed solutions for each question to enhance your learning.</li>
+            </ul>
+            <button class="login-btn" id="beginTestBtn">Commence Test</button>
+        </div>
+    </div>
+    
+    <!-- Test Interface -->
+    <div class="container" id="testInterface" style="display:none;">
+        <div class="questions-panel">
+            <div class="question-number" id="questionNumber">Question 1 of 10</div>
+            <div class="question-text urdu-text" id="questionText">
+                <!-- Urdu question will appear here -->
+            </div>
+            
+            <div class="options-container" id="optionsContainer">
+                <!-- Options will be populated by JavaScript -->
+            </div>
+            
+            <div class="navigation">
+                <button class="nav-btn prev" id="prevBtn">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button class="nav-btn next" id="nextBtn">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="nav-btn submit" id="submitBtn" style="display:none;">
+                    Submit Test <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <i class="fas fa-map-signs"></i> Question Navigator
+            </div>
+            
+            <div class="question-grid" id="questionGrid">
+                <!-- Question grid will be populated by JavaScript -->
+            </div>
+            
+            <div class="test-info">
+                <div class="info-item">
+                    <span>Questions:</span>
+                    <span>10</span>
+                </div>
+                <div class="info-item">
+                    <span>Answered:</span>
+                    <span id="answeredCount">0</span>
+                </div>
+                <div class="info-item">
+                    <span>Remaining:</span>
+                    <span id="unansweredCount">10</span>
+                </div>
+                <div class="info-item">
+                    <span>Current:</span>
+                    <span id="currentQuestion">1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Results Screen -->
+    <div class="container" id="resultsScreen" style="display:none;">
+        <div class="results-container">
+            <div class="spinner" id="loadingSpinner"></div>
+            <div id="resultsContent" style="display:none;">
+                <h2 class="results-title">Assessment Results</h2>
+                <div class="score-display">Your Score: <span class="score-value" id="scoreDisplay">0/10</span></div>
+                
+                <div class="solution-section">
+                    <h3 class="solution-title">Detailed Solutions</h3>
+                    <div id="solutionContainer">
+                        <!-- Solutions will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="modal-content" id="finalModal" style="margin-top:30px;">
+                    <h3>You've completed the assessment! Review your solutions to enhance your understanding.</h3>
+                    <button class="start-btn" style="margin-top:20px;" onclick="location.reload()">Exit Assessment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Symbiotic Learning. All rights reserved. This assessment is for educational purposes only.</p>
+        <p>Unauthorized access or distribution of test content is strictly prohibited.</p>
+    </footer>
+    
+    <script>
+        // Hardcoded login credentials
+        const VALID_NAME = "Aarya";
+        const VALID_PASSCODE = "urdu123";
+        
+        // 10 questions with Urdu text and English options
+        const questions = [
+            {
+                id: 1,
+                text: "مندرجہ ذیل میں سے کون سا لفظ اسم معرفہ ہے؟",
+                options: [
+                    "آدمی",
+                    "کتاب",
+                    "لاہور",
+                    "پہاڑ"
+                ],
+                answer: 2,
+                solution: "اسم معرفہ وہ اسم ہے جو کسی خاص شخص، جگہ یا چیز کے لیے استعمال ہو۔ 'لاہور' ایک خاص شہر کا نام ہے، اس لیے یہ اسم معرفہ ہے۔"
+            },
+            {
+                id: 2,
+                text: "کون سا لفظ فعل ماضی ہے؟",
+                options: [
+                    "کھاتا ہے",
+                    "کھائے گا",
+                    "کھایا",
+                    "کھا رہا ہے"
+                ],
+                answer: 2,
+                solution: "فعل ماضی وہ فعل ہے جو گزرے ہوئے وقت میں کسی کام کے ہونے کا بیان کرے۔ 'کھایا' ماضی کا فعل ہے۔"
+            },
+            {
+                id: 3,
+                text: "جملہ 'وہ کتاب پڑھ رہا ہے' میں فاعل کون سا ہے؟",
+                options: [
+                    "وہ",
+                    "کتاب",
+                    "پڑھ رہا ہے",
+                    "ہے"
+                ],
+                answer: 0,
+                solution: "فاعل وہ ہے جو کام کرتا ہے۔ اس جملے میں 'وہ' فاعل ہے کیونکہ وہ کتاب پڑھنے کا کام کر رہا ہے۔"
+            },
+            {
+                id: 4,
+                text: "کون سا لفظ ہمزہ کے صحیح استعمال کی مثال ہے؟",
+                options: [
+                    "فائزہ",
+                    "سؤال",
+                    "جاؤ",
+                    "تمام"
+                ],
+                answer: 1,
+                solution: "ہمزہ (ء) ایک حرف ہے جو بعض الفاظ میں آواز کو درست کرنے کے لیے استعمال ہوتا ہے۔ 'سؤال' میں ہمزہ کا صحیح استعمال ہے۔"
+            },
+            {
+                id: 5,
+                text: "'محنت کرنا' کا صحیح متضاد کیا ہے؟",
+                options: [
+                    "کام چور ہونا",
+                    "تیز ہونا",
+                    "ذہین ہونا",
+                    "مہربان ہونا"
+                ],
+                answer: 0,
+                solution: "متضاد وہ الفاظ ہوتے ہیں جن کے معنی ایک دوسرے کے برعکس ہوں۔ 'محنت کرنا' کا متضاد 'کام چور ہونا' ہے۔"
+            },
+            {
+                id: 6,
+                text: "کون سا جملہ صحیح ہے؟",
+                options: [
+                    "میں نے کتاب پڑھی ہے",
+                    "میں نے کتاب پڑھا ہے",
+                    "میں نے کتاب پڑھتا ہے",
+                    "میں نے کتاب پڑھو ہے"
+                ],
+                answer: 0,
+                solution: "اردو قواعد کے مطابق، جب فاعل مذکر ہو تو فعل مذکر اور جب فاعل مؤنث ہو تو فعل مؤنث ہوتا ہے۔ 'میں' کے ساتھ مؤنث فعل 'پڑھی' کا استعمال صحیح ہے۔"
+            },
+            {
+                id: 7,
+                text: "'شیر' کا مترادف کیا ہے؟",
+                options: [
+                    "ہاتھی",
+                    "بھیڑیا",
+                    "ببر شیر",
+                    "چیता"
+                ],
+                answer: 2,
+                solution: "مترادف وہ الفاظ ہوتے ہیں جن کے معنی ایک جیسے ہوں۔ 'شیر' کا مترادف 'ببر شیر' ہے۔"
+            },
+            {
+                id: 8,
+                text: "جملہ 'وہ بہت اچھا گاتا ہے' میں صفت کون سی ہے؟",
+                options: [
+                    "وہ",
+                    "بہت",
+                    "اچھا",
+                    "گاتا ہے"
+                ],
+                answer: 2,
+                solution: "صفت وہ لفظ ہے جو اسم یا ضمیر کی خصوصیت بیان کرے۔ اس جملے میں 'اچھا' صفت ہے جو گانے کی کیفیت بیان کر رہا ہے۔"
+            },
+            {
+                id: 9,
+                text: "کون سا لفظ مونث ہے؟",
+                options: [
+                    "میز",
+                    "کرسی",
+                    "دوا",
+                    "تمام"
+                ],
+                answer: 2,
+                solution: "اردو میں اسماء کے جنس ہوتے ہیں۔ 'دوا' مؤنث ہے جبکہ 'میز'، 'کرسی' مذکر ہیں۔"
+            },
+            {
+                id: 10,
+                text: "'آسمان سے ستارے ٹوٹ پڑے' میں استعارہ کس چیز کا ہے؟",
+                options: [
+                    "بارش ہونا",
+                    "تارے گرنا",
+                    "آفتاب نکالنا",
+                    "بادل چھا جانا"
+                ],
+                answer: 0,
+                solution: "استعارہ ایک ایسا بیان ہے جس میں کسی چیز کو دوسری چیز سے مشابہت دے کر بیان کیا جاتا ہے۔ یہاں 'ستارے ٹوٹ پڑے' سے مراد بارش کا ہونا ہے۔"
+            }
+        ];
+        
+        // State management
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let testStarted = false;
+        let totalSeconds = 18 * 60; // 18 minutes
+        let timerInterval;
+        
+        // DOM Elements
+        const welcomeModal = document.getElementById('welcomeModal');
+        const startBtn = document.getElementById('startBtn');
+        const loginScreen = document.getElementById('loginScreen');
+        const loginBtn = document.getElementById('loginBtn');
+        const nameInput = document.getElementById('nameInput');
+        const passcodeInput = document.getElementById('passcodeInput');
+        const instructionsScreen = document.getElementById('instructionsScreen');
+        const beginTestBtn = document.getElementById('beginTestBtn');
+        const testInterface = document.getElementById('testInterface');
+        const timerContainer = document.getElementById('timerContainer');
+        const timeDisplay = document.getElementById('time');
+        const progressBar = document.getElementById('progressBar');
+        const questionNumber = document.getElementById('questionNumber');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const questionGrid = document.getElementById('questionGrid');
+        const answeredCount = document.getElementById('answeredCount');
+        const unansweredCount = document.getElementById('unansweredCount');
+        const currentQuestion = document.getElementById('currentQuestion');
+        const resultsScreen = document.getElementById('resultsScreen');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const resultsContent = document.getElementById('resultsContent');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const solutionContainer = document.getElementById('solutionContainer');
+        
+        // Initialize the test
+        function initTest() {
+            if (!questionGrid) return;
+            
+            // Create question grid
+            questionGrid.innerHTML = '';
+            for (let i = 0; i < questions.length; i++) {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+                if (i === 0) gridItem.classList.add('current');
+                gridItem.textContent = i + 1;
+                gridItem.addEventListener('click', () => navigateToQuestion(i));
+                questionGrid.appendChild(gridItem);
+            }
+            
+            // Load first question
+            loadQuestion(currentQuestionIndex);
+        }
+        
+        // Load a question
+        function loadQuestion(index) {
+            if (!questionNumber || !questionText || !optionsContainer || 
+                !currentQuestion || !prevBtn || !nextBtn || !submitBtn || !questionGrid) {
+                return;
+            }
+            
+            const question = questions[index];
+            questionNumber.textContent = `Question ${index + 1} of ${questions.length}`;
+            questionText.innerHTML = question.text;
+            currentQuestion.textContent = index + 1;
+            
+            // Clear previous options
+            optionsContainer.innerHTML = '';
+            
+            // Create new options
+            question.options.forEach((option, i) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                if (userAnswers[index] === i) {
+                    optionElement.classList.add('selected');
+                }
+                
+                const optionLabel = document.createElement('span');
+                optionLabel.className = 'option-label';
+                optionLabel.textContent = String.fromCharCode(65 + i); // A, B, C, D
+                
+                optionElement.appendChild(optionLabel);
+                optionElement.appendChild(document.createTextNode(option));
+                
+                optionElement.addEventListener('click', () => selectOption(i));
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // Update navigation buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.style.display = index === questions.length - 1 ? 'none' : 'flex';
+            submitBtn.style.display = index === questions.length - 1 ? 'flex' : 'none';
+            
+            // Update question grid
+            const gridItems = document.querySelectorAll('.grid-item');
+            gridItems.forEach((item, i) => {
+                item.classList.remove('current');
+                if (userAnswers[i] !== null) {
+                    item.classList.add('answered');
+                } else {
+                    item.classList.remove('answered');
+                }
+            });
+            gridItems[index].classList.add('current');
+            
+            // Update counters
+            if (answeredCount && unansweredCount) {
+                const answered = userAnswers.filter(answer => answer !== null).length;
+                answeredCount.textContent = answered;
+                unansweredCount.textContent = questions.length - answered;
+            }
+        }
+        
+        // Select an option
+        function selectOption(optionIndex) {
+            userAnswers[currentQuestionIndex] = optionIndex;
+            loadQuestion(currentQuestionIndex);
+        }
+        
+        // Navigate to a question
+        function navigateToQuestion(index) {
+            currentQuestionIndex = index;
+            loadQuestion(index);
+        }
+        
+        // Timer function
+        function startTimer() {
+            if (!timeDisplay || !progressBar) return;
+            
+            timerInterval = setInterval(() => {
+                totalSeconds--;
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+                
+                timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Update progress bar
+                const progressPercentage = (totalSeconds / (18 * 60)) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+                
+                // Color change when time is running out
+                if (totalSeconds < 5 * 60) { // Less than 5 minutes
+                    progressBar.style.background = 'linear-gradient(135deg, var(--secondary), #b71c1c)';
+                }
+                
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+        
+        // Submit test
+        function submitTest() {
+            if (!testInterface || !resultsScreen || !loadingSpinner || 
+                !resultsContent || !scoreDisplay || !solutionContainer) {
+                return;
+            }
+            
+            clearInterval(timerInterval);
+            testInterface.style.display = 'none';
+            resultsScreen.style.display = 'flex';
+            
+            // Show loading spinner
+            setTimeout(() => {
+                if (loadingSpinner) loadingSpinner.style.display = 'none';
+                if (resultsContent) resultsContent.style.display = 'block';
+                
+                // Calculate score
+                let score = 0;
+                questions.forEach((q, i) => {
+                    if (userAnswers[i] === q.answer) {
+                        score++;
+                    }
+                });
+                
+                // Display score
+                if (scoreDisplay) {
+                    scoreDisplay.innerHTML = `${score}<span style="font-size:2rem;">/</span>${questions.length}`;
+                }
+                
+                // Populate solutions
+                if (solutionContainer) {
+                    solutionContainer.innerHTML = '';
+                    questions.forEach((q, i) => {
+                        const solutionDiv = document.createElement('div');
+                        solutionDiv.className = 'solution-content';
+                        
+                        const solTitle = document.createElement('h4');
+                        solTitle.className = 'urdu-text';
+                        solTitle.textContent = `${i+1}: ${q.text}`;
+                        solTitle.style.color = 'var(--primary)';
+                        solTitle.style.marginBottom = '10px';
+                        
+                        const solText = document.createElement('div');
+                        solText.innerHTML = `<strong>Solution:</strong> ${q.solution}`;
+                        
+                        solutionDiv.appendChild(solTitle);
+                        solutionDiv.appendChild(solText);
+                        solutionContainer.appendChild(solutionDiv);
+                    });
+                }
+            }, 2000);
+        }
+        
+        // Event listeners
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                if (!welcomeModal || !loginScreen) return;
+                
+                welcomeModal.style.opacity = '0';
+                setTimeout(() => {
+                    welcomeModal.style.display = 'none';
+                    loginScreen.style.display = 'flex';
+                }, 300);
+            });
+        }
+        
+        if (nameInput && passcodeInput) {
+            nameInput.addEventListener('input', validateLogin);
+            passcodeInput.addEventListener('input', validateLogin);
+        }
+        
+        function validateLogin() {
+            if (loginBtn) {
+                loginBtn.disabled = !(nameInput.value.trim() && passcodeInput.value.trim());
+            }
+        }
+        
+        if (loginBtn) {
+            loginBtn.addEventListener('click', () => {
+                if (!loginScreen || !instructionsScreen) return;
+                
+                if (nameInput.value.trim() === VALID_NAME && passcodeInput.value.trim() === VALID_PASSCODE) {
+                    loginScreen.style.display = 'none';
+                    instructionsScreen.style.display = 'flex';
+                } else {
+                    alert("Invalid credentials. Please try again.");
+                }
+            });
+        }
+        
+        if (beginTestBtn) {
+            beginTestBtn.addEventListener('click', () => {
+                if (!instructionsScreen || !testInterface || !timerContainer) return;
+                
+                instructionsScreen.style.display = 'none';
+                testInterface.style.display = 'flex';
+                timerContainer.style.display = 'flex';
+                testStarted = true;
+                startTimer();
+                initTest();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    loadQuestion(currentQuestionIndex);
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    loadQuestion(currentQuestionIndex);
+                }
+            });
+        }
+        
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to submit your test? You cannot change your answers after submission.')) {
+                    submitTest();
+                }
+            });
+        }
+        
+        // Initialize the app
+        if (welcomeModal) {
+            welcomeModal.style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
