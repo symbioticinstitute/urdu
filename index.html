@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urdu Grammar Proficiency Test</title>
+    <title>BIHAR D.El.Ed. Entrance Exam 2025 - Practice Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <style>
@@ -52,6 +52,12 @@
             line-height: 1.8;
             text-align: right;
             direction: rtl;
+        }
+
+        /* Hindi Font */
+        .hindi-text {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
         }
 
         /* Header */
@@ -228,7 +234,7 @@
 
         .form-group {
             margin-bottom: 25px;
-            text-align: right;
+            text-align: left;
         }
 
         .form-label {
@@ -602,32 +608,42 @@
             padding: 0 20px;
         }
 
-        .solution-section {
-            margin-top: 30px;
-            padding: 25px;
-            background: var(--light-blue);
-            border-radius: 15px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .solution-title {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 20px;
+        .solution-link {
+            display: block;
             text-align: center;
+            margin: 30px 0;
+            font-size: 1.2rem;
         }
 
-        .solution-content {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        .solution-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.3s;
         }
 
-        .solution-content p {
+        .solution-link a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
+        }
+
+        /* Section Indicator */
+        .section-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--light-blue);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 15px;
         }
 
@@ -671,6 +687,16 @@
         @keyframes float { 
             0%, 100% { transform: translateY(0) rotate(0deg); } 
             50% { transform: translateY(-20px) rotate(5deg); } 
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: var(--light-pink);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 14px;
+            border-left: 4px solid var(--secondary);
         }
 
         /* Responsive */
@@ -770,10 +796,10 @@
     <header>
         <div class="logo">
             <div class="logo-icon">
-                <i class="fas fa-language"></i>
+                <i class="fas fa-graduation-cap"></i>
             </div>
             <div>
-                <div class="logo-text">Urdu Grammar Test</div>
+                <div class="logo-text">BIHAR D.El.Ed. Practice Test</div>
                 <div class="logo-subtitle">By Symbiotic Learning</div>
             </div>
         </div>
@@ -781,7 +807,7 @@
         <div class="timer-container" id="timerContainer" style="display:none;">
             <div class="timer">
                 <i class="fas fa-clock"></i>
-                <span id="time">18:00</span>
+                <span id="time">90:00</span>
             </div>
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
@@ -792,22 +818,22 @@
     <!-- Welcome Modal -->
     <div class="modal-overlay" id="welcomeModal">
         <div class="modal-content">
-            <h1 class="modal-title">Urdu Grammar Proficiency Test</h1>
-            <p class="modal-subtitle">This assessment evaluates your understanding of Urdu grammar rules and concepts. Approach with confidence—this is an opportunity to demonstrate your knowledge and identify areas for growth.</p>
+            <h1 class="modal-title">BIHAR D.El.Ed. Entrance Exam 2025</h1>
+            <p class="modal-subtitle">This practice test evaluates your knowledge in Mathematics, English, and Urdu. Approach with confidence—this is an opportunity to demonstrate your knowledge and identify areas for growth.</p>
             
             <div class="test-info">
                 <div class="info-title">Test Information</div>
                 <div class="info-item">
                     <span>Total Questions:</span>
-                    <span>10</span>
+                    <span>50</span>
                 </div>
                 <div class="info-item">
                     <span>Duration:</span>
-                    <span>18 minutes</span>
+                    <span>90 minutes</span>
                 </div>
                 <div class="info-item">
-                    <span>Topics Covered:</span>
-                    <span>Urdu grammar concepts</span>
+                    <span>Sections:</span>
+                    <span>Mathematics, English, Urdu</span>
                 </div>
                 <div class="info-item">
                     <span>Scoring:</span>
@@ -815,7 +841,11 @@
                 </div>
             </div>
             
-            <button class="start-btn" id="startBtn">Begin Your Assessment</button>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> We are an educational institution guiding students for different competitive examinations. This portal is only for practice purposes and we are not affiliated with the exam conducting body in any way.
+            </div>
+            
+            <button class="start-btn" id="startBtn">Begin Practice Test</button>
         </div>
     </div>
     
@@ -840,14 +870,14 @@
         <div class="instructions-container">
             <h2 class="instructions-title">Test Guidelines</h2>
             <ul class="instructions-list">
-                <li>You have <strong>18 minutes</strong> to complete all 10 questions. The timer will be visible throughout the test.</li>
-                <li>This assessment covers various Urdu grammar concepts.</li>
+                <li>You have <strong>90 minutes</strong> to complete all 50 questions. The timer will be visible throughout the test.</li>
+                <li>This assessment covers three sections: Mathematics (20 questions), English (15 questions), and Urdu (15 questions).</li>
                 <li>Each question carries equal weight (1 mark). There is no penalty for incorrect answers.</li>
                 <li>Use the question palette to navigate between questions. Answered questions will be highlighted in green.</li>
                 <li>You can change your answers at any time before submission by returning to the question.</li>
                 <li>Click the "Submit Test" button when you have completed all questions. You can also submit early if needed.</li>
                 <li>Do not refresh the page or close your browser during the test, as this will terminate your session.</li>
-                <li>After submission, you'll receive detailed solutions for each question to enhance your learning.</li>
+                <li>After submission, you'll receive your total score and a link to detailed solutions.</li>
             </ul>
             <button class="login-btn" id="beginTestBtn">Commence Test</button>
         </div>
@@ -856,9 +886,10 @@
     <!-- Test Interface -->
     <div class="container" id="testInterface" style="display:none;">
         <div class="questions-panel">
-            <div class="question-number" id="questionNumber">Question 1 of 10</div>
-            <div class="question-text urdu-text" id="questionText">
-                <!-- Urdu question will appear here -->
+            <div class="question-number" id="questionNumber">Question 1 of 50</div>
+            <div class="section-indicator" id="sectionIndicator">Mathematics</div>
+            <div class="question-text" id="questionText">
+                <!-- Question will appear here -->
             </div>
             
             <div class="options-container" id="optionsContainer">
@@ -890,7 +921,7 @@
             <div class="test-info">
                 <div class="info-item">
                     <span>Questions:</span>
-                    <span>10</span>
+                    <span>50</span>
                 </div>
                 <div class="info-item">
                     <span>Answered:</span>
@@ -898,7 +929,7 @@
                 </div>
                 <div class="info-item">
                     <span>Remaining:</span>
-                    <span id="unansweredCount">10</span>
+                    <span id="unansweredCount">50</span>
                 </div>
                 <div class="info-item">
                     <span>Current:</span>
@@ -914,17 +945,16 @@
             <div class="spinner" id="loadingSpinner"></div>
             <div id="resultsContent" style="display:none;">
                 <h2 class="results-title">Assessment Results</h2>
-                <div class="score-display">Your Score: <span class="score-value" id="scoreDisplay">0/10</span></div>
+                <div class="score-display">Your Score: <span class="score-value" id="scoreDisplay">0/50</span></div>
                 
-                <div class="solution-section">
-                    <h3 class="solution-title">Detailed Solutions</h3>
-                    <div id="solutionContainer">
-                        <!-- Solutions will be populated by JavaScript -->
-                    </div>
+                <div class="solution-link">
+                    <a href="https://clprogers.page.link/t96T" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Detailed Solutions on Our App
+                    </a>
                 </div>
                 
                 <div class="modal-content" id="finalModal" style="margin-top:30px;">
-                    <h3>You've completed the assessment! Review your solutions to enhance your understanding.</h3>
+                    <h3>You've completed the practice test! Download our app for more practice tests and detailed solutions.</h3>
                     <button class="start-btn" style="margin-top:20px;" onclick="location.reload()">Exit Assessment</button>
                 </div>
             </div>
@@ -941,127 +971,612 @@
         const VALID_NAME = "symbiotic";
         const VALID_PASSCODE = "urdu123";
         
-        // 10 questions with Urdu text and English options
+        // Questions array with 50 questions (20 Maths, 15 English, 15 Urdu)
         const questions = [
+            // Mathematics Questions (1-20)
             {
                 id: 1,
-                text: "مندرجہ ذیل میں سے کون سا لفظ اسم معرفہ ہے؟",
+                section: "Mathematics",
+                text: "(sec A + tan A)(1 − sin A) =",
                 options: [
-                    "آدمی",
-                    "کتاب",
-                    "لاہور",
-                    "پہاڑ"
+                    "sec A",
+                    "sin A",
+                    "csc A",
+                    "cos A"
                 ],
-                answer: 2,
-                solution: "اسم معرفہ وہ اسم ہے جو کسی خاص شخص، جگہ یا چیز کے لیے استعمال ہو۔ 'لاہور' ایک خاص شہر کا نام ہے، اس لیے یہ اسم معرفہ ہے۔"
+                answer: 3
             },
             {
                 id: 2,
-                text: "کون سا لفظ فعل ماضی ہے؟",
+                section: "Mathematics",
+                text: "एक बिंदु होता है-",
                 options: [
-                    "کھاتا ہے",
-                    "کھائے گا",
-                    "کھایا",
-                    "کھا رہا ہے"
+                    "एक विमीय",
+                    "द्विविमीय",
+                    "त्रिविमीय",
+                    "इनमें से कोई नहीं"
                 ],
-                answer: 2,
-                solution: "فعل ماضی وہ فعل ہے جو گزرے ہوئے وقت میں کسی کام کے ہونے کا بیان کرے۔ 'کھایا' ماضی کا فعل ہے۔"
+                answer: 0
             },
             {
                 id: 3,
-                text: "جملہ 'وہ کتاب پڑھ رہا ہے' میں فاعل کون سا ہے؟",
+                section: "Mathematics",
+                text: "दो संख्याओं a और 18 का LCM = 36 तथा HCF = 2 है, तो a का मान होगा-",
                 options: [
-                    "وہ",
-                    "کتاب",
-                    "پڑھ رہا ہے",
-                    "ہے"
+                    "2",
+                    "3",
+                    "4",
+                    "1"
                 ],
-                answer: 0,
-                solution: "فاعل وہ ہے جو کام کرتا ہے۔ اس جملے میں 'وہ' فاعل ہے کیونکہ وہ کتاب پڑھنے کا کام کر رہا ہے۔"
+                answer: 2
             },
             {
                 id: 4,
-                text: "کون سا لفظ ہمزہ کے صحیح استعمال کی مثال ہے؟",
+                section: "Mathematics",
+                text: "रैखिक समीकरण x + y = 10 का आलेख होगा-",
                 options: [
-                    "فائزہ",
-                    "سؤال",
-                    "جاؤ",
-                    "تمام"
+                    "उदग्र रेखा",
+                    "क्षैतिज रेखा",
+                    "सरल रेखा",
+                    "इनमें से कोई नहीं"
                 ],
-                answer: 1,
-                solution: "ہمزہ (ء) ایک حرف ہے جو بعض الفاظ میں آواز کو درست کرنے کے لیے استعمال ہوتا ہے۔ 'سؤال' میں ہمزہ کا صحیح استعمال ہے۔"
+                answer: 2
             },
             {
                 id: 5,
-                text: "'محنت کرنا' کا صحیح متضاد کیا ہے؟",
+                section: "Mathematics",
+                text: "यदि 2x + 3y = 7 और 2ax + (a + b)y = 8 के अनंत हल हों, तो-",
                 options: [
-                    "کام چور ہونا",
-                    "تیز ہونا",
-                    "ذہین ہونا",
-                    "مہربان ہونا"
+                    "a = 2b",
+                    "b = 2a",
+                    "a + 2b = 0",
+                    "2a + b = 0"
                 ],
-                answer: 0,
-                solution: "متضاد وہ الفاظ ہوتے ہیں جن کے معنی ایک دوسرے کے برعکس ہوں۔ 'محنت کرنا' کا متضاد 'کام چور ہونا' ہے۔"
+                answer: 1
             },
             {
                 id: 6,
-                text: "کون سا جملہ صحیح ہے؟",
+                section: "Mathematics",
+                text: "यदि (0, 0), (3, √3), (3, P) एक समबाहु त्रिभुज बनाते हैं तो P =?",
                 options: [
-                    "میں نے کتاب پڑھی ہے",
-                    "میں نے کتاب پڑھا ہے",
-                    "میں نے کتاب پڑھتا ہے",
-                    "میں نے کتاب پڑھو ہے"
+                    "1",
+                    "2",
+                    "3",
+                    "√3 − √3"
                 ],
-                answer: 0,
-                solution: "اردو قواعد کے مطابق، جب فاعل مذکر ہو تو فعل مذکر اور جب فاعل مؤنث ہو تو فعل مؤنث ہوتا ہے۔ 'میں' کے ساتھ مؤنث فعل 'پڑھی' کا استعمال صحیح ہے۔"
+                answer: 1
             },
             {
                 id: 7,
-                text: "'شیر' کا مترادف کیا ہے؟",
+                section: "Mathematics",
+                text: "यदि घन का आयतन 1728 cm³ है, तो इसकी भुजा =?",
                 options: [
-                    "ہاتھی",
-                    "بھیڑیا",
-                    "ببر شیر",
-                    "چیता"
+                    "7 cm",
+                    "12 cm",
+                    "18 cm",
+                    "19 cm"
                 ],
-                answer: 2,
-                solution: "مترادف وہ الفاظ ہوتے ہیں جن کے معنی ایک جیسے ہوں۔ 'شیر' کا مترادف 'ببر شیر' ہے۔"
+                answer: 1
             },
             {
                 id: 8,
-                text: "جملہ 'وہ بہت اچھا گاتا ہے' میں صفت کون سی ہے؟",
+                section: "Mathematics",
+                text: "7 cm त्रिज्या वाले वृत्त में केंद्र पर 30° का चाप की लंबाई होगी-",
                 options: [
-                    "وہ",
-                    "بہت",
-                    "اچھا",
-                    "گاتا ہے"
+                    "11 cm",
+                    "11/3 cm",
+                    "22/3 cm",
+                    "22 cm"
                 ],
-                answer: 2,
-                solution: "صفت وہ لفظ ہے جو اسم یا ضمیر کی خصوصیت بیان کرے۔ اس جملے میں 'اچھا' صفت ہے جو گانے کی کیفیت بیان کر رہا ہے۔"
+                answer: 2
             },
             {
                 id: 9,
-                text: "کون سا لفظ مونث ہے؟",
+                section: "Mathematics",
+                text: "समांतर चतुर्भुज के दो आसन्न कोणों के समद्विभाजक प्रतिच्छेद करते हैं-",
                 options: [
-                    "میز",
-                    "کرسی",
-                    "دوا",
-                    "تمام"
+                    "30°",
+                    "45°",
+                    "60°",
+                    "90°"
                 ],
-                answer: 2,
-                solution: "اردو میں اسماء کے جنس ہوتے ہیں۔ 'دوا' مؤنث ہے جبکہ 'میز'، 'کرسی' مذکر ہیں۔"
+                answer: 3
             },
             {
                 id: 10,
-                text: "'آسمان سے ستارے ٹوٹ پڑے' میں استعارہ کس چیز کا ہے؟",
+                section: "Mathematics",
+                text: "त्रिभुज ABC की भुजाएँ BC = a, CA = b, AB = c हों और अर्धपरिधि s हो। वृत्त यदि BC पर D बिंदु पर स्पर्श करता है, तो BD =?",
                 options: [
-                    "بارش ہونا",
-                    "تارے گرنا",
-                    "آفتاب نکالنا",
-                    "بادل چھا جانا"
+                    "s − a",
+                    "s − b",
+                    "s − c",
+                    "s − (a + c)"
                 ],
-                answer: 0,
-                solution: "استعارہ ایک ایسا بیان ہے جس میں کسی چیز کو دوسری چیز سے مشابہت دے کر بیان کیا جاتا ہے۔ یہاں 'ستارے ٹوٹ پڑے' سے مراد بارش کا ہونا ہے۔"
+                answer: 0
+            },
+            {
+                id: 11,
+                section: "Mathematics",
+                text: "एक अपरिमेय संख्या के लिए सही कथन-",
+                options: [
+                    "दशमलव रूप सांत",
+                    "दशमलव रूप असांत आवर्ती",
+                    "दशमलव रूप असांत अनावर्ती",
+                    "कोई नहीं"
+                ],
+                answer: 2
+            },
+            {
+                id: 12,
+                section: "Mathematics",
+                text: "यदि बिंदु (a, 0), (0, b), (1, 1) कोलिनियर हों, तो a + b =?",
+                options: [
+                    "−ab",
+                    "ab",
+                    "1/ab",
+                    "2/ab"
+                ],
+                answer: 1
+            },
+            {
+                id: 13,
+                section: "Mathematics",
+                text: "यदि f(x) = (k² + 4)x² + 13x + 4k के शून्यक व्युत्क्रमानुपाती हों, तो k =?",
+                options: [
+                    "-2",
+                    "-1",
+                    "2",
+                    "1"
+                ],
+                answer: 2
+            },
+            {
+                id: 14,
+                section: "Mathematics",
+                text: "तोरण (Histogram) के वर्ग-अंतराल होने चाहिए-",
+                options: [
+                    "समावेशिक",
+                    "अपवर्जी",
+                    "दोनों",
+                    "कोई नहीं"
+                ],
+                answer: 1
+            },
+            {
+                id: 15,
+                section: "Mathematics",
+                text: "दो प्रतिच्छेदी रेखाओं के सामान्य बिंदुओं की संख्या-",
+                options: [
+                    "0",
+                    "2",
+                    "1",
+                    "अनंत"
+                ],
+                answer: 2
+            },
+            {
+                id: 16,
+                section: "Mathematics",
+                text: "₹15000 की मशीन ₹2250 अग्रिम व 2 अर्द्धवार्षिक किस्तों पर खरीदी गई, ब्याज 8% प्रतिवर्ष (अर्द्धवार्षिक चक्रवृद्धि)। प्रत्येक किस्त की राशि =?",
+                options: [
+                    "6760",
+                    "6740",
+                    "6860",
+                    "6840"
+                ],
+                answer: 0
+            },
+            {
+                id: 17,
+                section: "Mathematics",
+                text: "एक समबाहु त्रिभुज का क्षेत्रफल (√3/4)*भुजा² होता है। यदि भुजा 4 cm है, तो क्षेत्रफल है-",
+                options: [
+                    "4√3",
+                    "8√3",
+                    "12√3",
+                    "16√3"
+                ],
+                answer: 0
+            },
+            {
+                id: 18,
+                section: "Mathematics",
+                text: "10 सेमी त्रिज्या वाले वृत्त की परिधि क्या है?",
+                options: [
+                    "20π",
+                    "30π",
+                    "40π",
+                    "50π"
+                ],
+                answer: 0
+            },
+            {
+                id: 19,
+                section: "Mathematics",
+                text: "2, 3, 5, 7, 11, ... अगली संख्या है?",
+                options: [
+                    "13",
+                    "15",
+                    "17",
+                    "19"
+                ],
+                answer: 0
+            },
+            {
+                id: 20,
+                section: "Mathematics",
+                text: "1 से 100 तक कितनी अभाज्य संख्याएँ हैं?",
+                options: [
+                    "25",
+                    "26",
+                    "27",
+                    "28"
+                ],
+                answer: 0
+            },
+            
+            // English Questions (21-35)
+            {
+                id: 21,
+                section: "English",
+                text: "Not only Mathematics but also Science ______ important.",
+                options: [
+                    "were",
+                    "is",
+                    "have",
+                    "are"
+                ],
+                answer: 1
+            },
+            {
+                id: 22,
+                section: "English",
+                text: "Black sheep",
+                options: [
+                    "A quarrelsome person",
+                    "An honourable member of a group",
+                    "A Kind man",
+                    "A disreputable member of a group"
+                ],
+                answer: 3
+            },
+            {
+                id: 23,
+                section: "English",
+                text: "Birds of the same feather",
+                options: [
+                    "Persons of the same height",
+                    "Persons of the same character",
+                    "People working together",
+                    "Birds flying together"
+                ],
+                answer: 1
+            },
+            {
+                id: 24,
+                section: "English",
+                text: "The Council made its ______ decision.",
+                options: [
+                    "having",
+                    "have",
+                    "have had",
+                    "has"
+                ],
+                answer: 0
+            },
+            {
+                id: 25,
+                section: "English",
+                text: "The quality of products ______ over time.",
+                options: [
+                    "have degrading",
+                    "were degraded",
+                    "has been degrading",
+                    "are degrading"
+                ],
+                answer: 2
+            },
+            {
+                id: 26,
+                section: "English",
+                text: "Which one of the following punctuation marks is used to show range of numbers, dates or time?",
+                options: [
+                    "Semicolon",
+                    "Exclamation mark",
+                    "Dash",
+                    "Question mark"
+                ],
+                answer: 2
+            },
+            {
+                id: 27,
+                section: "English",
+                text: "We drove him out of the train. [Passive Voice]",
+                options: [
+                    "He was drove out of the train.",
+                    "He was being driven out of train by us.",
+                    "He has been driven out of the train.",
+                    "He was driven out of the train."
+                ],
+                answer: 3
+            },
+            {
+                id: 28,
+                section: "English",
+                text: "By leaps and bounds",
+                options: [
+                    "Playing wisely",
+                    "Driving fast",
+                    "Growing rapidly",
+                    "Moving aimlessly"
+                ],
+                answer: 2
+            },
+            {
+                id: 29,
+                section: "English",
+                text: "Eight kilometres ______ a long distance.",
+                options: [
+                    "is",
+                    "are",
+                    "have",
+                    "were"
+                ],
+                answer: 0
+            },
+            {
+                id: 30,
+                section: "English",
+                text: "Sameer said, \"I will come back in fifteen minutes.\" [Indirect speech] Sameer told that he ______ back in fifteen minutes.",
+                options: [
+                    "would come",
+                    "Will come",
+                    "shall came",
+                    "should come"
+                ],
+                answer: 0
+            },
+            {
+                id: 31,
+                section: "English",
+                text: "You will get the job on the condition that you ______ hard.",
+                options: [
+                    "work",
+                    "will work",
+                    "have work",
+                    "worked"
+                ],
+                answer: 0
+            },
+            {
+                id: 32,
+                section: "English",
+                text: "I drove to the library instead ______ I was too lazy to walk.",
+                options: [
+                    "moreover",
+                    "despite",
+                    "however",
+                    "because"
+                ],
+                answer: 3
+            },
+            {
+                id: 33,
+                section: "English",
+                text: "English is spoken all ______ the world.",
+                options: [
+                    "beside",
+                    "from",
+                    "above",
+                    "over"
+                ],
+                answer: 3
+            },
+            {
+                id: 34,
+                section: "English",
+                text: "She hopes to succeed. [Non-finite verb]",
+                options: [
+                    "To",
+                    "She",
+                    "Hopes",
+                    "Succeed"
+                ],
+                answer: 0
+            },
+            {
+                id: 35,
+                section: "English",
+                text: "Exclamation mark is generally used to show",
+                options: [
+                    "Strong Feeling",
+                    "Sadness",
+                    "All",
+                    "Happiness"
+                ],
+                answer: 0
+            },
+            
+            // Urdu Questions (36-50)
+            {
+                id: 36,
+                section: "Urdu",
+                text: "حمد کے لغوی معنی کیا ہیں؟",
+                options: [
+                    "خدا کی تعریف کرنا",
+                    "شاعری کرنا",
+                    "قصیدہ کہنا",
+                    "نعت کہنا"
+                ],
+                answer: 0
+            },
+            {
+                id: 37,
+                section: "Urdu",
+                text: "اردو شاعری میں حمد کس صنف میں شامل ہے؟",
+                options: [
+                    "مقبول",
+                    "غیر مقبول",
+                    "منقبتی",
+                    "رثائی"
+                ],
+                answer: 2
+            },
+            {
+                id: 38,
+                section: "Urdu",
+                text: "حمد کے اشعار میں کس کی صفات بیان کی جاتی ہیں؟",
+                options: [
+                    "خدا",
+                    "شاعر",
+                    "ولی",
+                    "نبی"
+                ],
+                answer: 0
+            },
+            {
+                id: 39,
+                section: "Urdu",
+                text: "شاعر حمد میں خدا کی کن صفات کو بیان کرتا ہے؟",
+                options: [
+                    "بے شمار صفتیں",
+                    "محدود صفات",
+                    "غزلیں",
+                    "رثا"
+                ],
+                answer: 0
+            },
+            {
+                id: 40,
+                section: "Urdu",
+                text: "اردو کا ایسا کون سا شاعر ہے جس نے حمد نہ کہی ہو؟",
+                options: [
+                    "کوئی نہیں",
+                    "سب",
+                    "چند",
+                    "صرف عظیم"
+                ],
+                answer: 0
+            },
+            {
+                id: 41,
+                section: "Urdu",
+                text: "کلام کی شروعات کس صنف کے ساتھ کی جاتی ہے؟",
+                options: [
+                    "حمد",
+                    "نعت",
+                    "غزل",
+                    "قصیدہ"
+                ],
+                answer: 0
+            },
+            {
+                id: 42,
+                section: "Urdu",
+                text: "شبنم کمالی کا تعلق کس ریاست سے ہے؟",
+                options: [
+                    "بہار",
+                    "پنجاب",
+                    "دہلی",
+                    "حیدرآباد"
+                ],
+                answer: 0
+            },
+            {
+                id: 43,
+                section: "Urdu",
+                text: "شبنم کمالی کا اصل نام کیا ہے؟",
+                options: [
+                    "مصطفیٰ رضا",
+                    "شبنم کمالی",
+                    "احمد رضا",
+                    "حمید اختر"
+                ],
+                answer: 0
+            },
+            {
+                id: 44,
+                section: "Urdu",
+                text: "شبنم کمالی کی پیدائش کب ہوئی؟",
+                options: [
+                    "22 جولائی 1938ء",
+                    "15 اگست 1947ء",
+                    "10 جنوری 1950ء",
+                    "1 مارچ 1940ء"
+                ],
+                answer: 0
+            },
+            {
+                id: 45,
+                section: "Urdu",
+                text: "شبنم کمالی نے اپنی زندگی کا بیشتر حصہ کس کام میں صرف کیا؟",
+                options: [
+                    "وعظ و تبلیغ",
+                    "شاعری",
+                    "صحافت",
+                    "تجارت"
+                ],
+                answer: 0
+            },
+            {
+                id: 46,
+                section: "Urdu",
+                text: "شبنم کمالی کے نعتیہ مجموعے میں کون سا شامل ہے؟",
+                options: [
+                    "انوار عقیدت",
+                    "دیوان غالب",
+                    "بانگ درا",
+                    "صوت المرید"
+                ],
+                answer: 0
+            },
+            {
+                id: 47,
+                section: "Urdu",
+                text: "حمد اور نعت میں کیا فرق ہے؟",
+                options: [
+                    "حمد خدا کی، نعت نبی کی تعریف",
+                    "دونوں ایک جیسے",
+                    "دونوں صرف غزلیں ہیں",
+                    "دونوں قصیدے ہیں"
+                ],
+                answer: 0
+            },
+            {
+                id: 48,
+                section: "Urdu",
+                text: "منقبت کس کی تعریف کے لئے کہی جاتی ہے؟",
+                options: [
+                    "بزرگانِ دین",
+                    "شاعر",
+                    "بادشاہ",
+                    "عالم"
+                ],
+                answer: 0
+            },
+            {
+                id: 49,
+                section: "Urdu",
+                text: "قصیدہ کس کے اوصاف حمیدہ بیان کرتا ہے؟",
+                options: [
+                    "کسی بھی شخص",
+                    "صرف نبی",
+                    "صرف خدا",
+                    "صرف شاعر"
+                ],
+                answer: 0
+            },
+            {
+                id: 50,
+                section: "Urdu",
+                text: "حمد کے اشعار میں خدا کی کون سی صفت بیان نہیں کی جاتی؟",
+                options: [
+                    "شریک ہونا",
+                    "یکتا ہونا",
+                    "قادر ہونا",
+                    "خالق ہونا"
+                ],
+                answer: 0
             }
         ];
         
@@ -1069,7 +1584,7 @@
         let currentQuestionIndex = 0;
         let userAnswers = new Array(questions.length).fill(null);
         let testStarted = false;
-        let totalSeconds = 18 * 60; // 18 minutes
+        let totalSeconds = 90 * 60; // 90 minutes
         let timerInterval;
         
         // DOM Elements
@@ -1086,6 +1601,7 @@
         const timeDisplay = document.getElementById('time');
         const progressBar = document.getElementById('progressBar');
         const questionNumber = document.getElementById('questionNumber');
+        const sectionIndicator = document.getElementById('sectionIndicator');
         const questionText = document.getElementById('questionText');
         const optionsContainer = document.getElementById('optionsContainer');
         const prevBtn = document.getElementById('prevBtn');
@@ -1099,7 +1615,6 @@
         const loadingSpinner = document.getElementById('loadingSpinner');
         const resultsContent = document.getElementById('resultsContent');
         const scoreDisplay = document.getElementById('scoreDisplay');
-        const solutionContainer = document.getElementById('solutionContainer');
         
         // Initialize the test
         function initTest() {
@@ -1123,12 +1638,23 @@
         // Load a question
         function loadQuestion(index) {
             if (!questionNumber || !questionText || !optionsContainer || 
-                !currentQuestion || !prevBtn || !nextBtn || !submitBtn || !questionGrid) {
+                !currentQuestion || !prevBtn || !nextBtn || !submitBtn || !questionGrid || !sectionIndicator) {
                 return;
             }
             
             const question = questions[index];
             questionNumber.textContent = `Question ${index + 1} of ${questions.length}`;
+            sectionIndicator.textContent = question.section;
+            
+            // Apply appropriate font based on section
+            if (question.section === "Urdu") {
+                questionText.className = "question-text urdu-text";
+            } else if (question.section === "Mathematics") {
+                questionText.className = "question-text hindi-text";
+            } else {
+                questionText.className = "question-text";
+            }
+            
             questionText.innerHTML = question.text;
             currentQuestion.textContent = index + 1;
             
@@ -1148,7 +1674,16 @@
                 optionLabel.textContent = String.fromCharCode(65 + i); // A, B, C, D
                 
                 optionElement.appendChild(optionLabel);
-                optionElement.appendChild(document.createTextNode(option));
+                
+                // Apply Urdu font for Urdu section options
+                if (question.section === "Urdu") {
+                    const urduOptionText = document.createElement('span');
+                    urduOptionText.className = 'urdu-text';
+                    urduOptionText.textContent = option;
+                    optionElement.appendChild(urduOptionText);
+                } else {
+                    optionElement.appendChild(document.createTextNode(option));
+                }
                 
                 optionElement.addEventListener('click', () => selectOption(i));
                 optionsContainer.appendChild(optionElement);
@@ -1203,7 +1738,7 @@
                 timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 
                 // Update progress bar
-                const progressPercentage = (totalSeconds / (18 * 60)) * 100;
+                const progressPercentage = (totalSeconds / (90 * 60)) * 100;
                 progressBar.style.width = `${progressPercentage}%`;
                 
                 // Color change when time is running out
@@ -1221,7 +1756,7 @@
         // Submit test
         function submitTest() {
             if (!testInterface || !resultsScreen || !loadingSpinner || 
-                !resultsContent || !scoreDisplay || !solutionContainer) {
+                !resultsContent || !scoreDisplay) {
                 return;
             }
             
@@ -1245,28 +1780,6 @@
                 // Display score
                 if (scoreDisplay) {
                     scoreDisplay.innerHTML = `${score}<span style="font-size:2rem;">/</span>${questions.length}`;
-                }
-                
-                // Populate solutions
-                if (solutionContainer) {
-                    solutionContainer.innerHTML = '';
-                    questions.forEach((q, i) => {
-                        const solutionDiv = document.createElement('div');
-                        solutionDiv.className = 'solution-content';
-                        
-                        const solTitle = document.createElement('h4');
-                        solTitle.className = 'urdu-text';
-                        solTitle.textContent = `${i+1}: ${q.text}`;
-                        solTitle.style.color = 'var(--primary)';
-                        solTitle.style.marginBottom = '10px';
-                        
-                        const solText = document.createElement('div');
-                        solText.innerHTML = `<strong>Solution:</strong> ${q.solution}`;
-                        
-                        solutionDiv.appendChild(solTitle);
-                        solutionDiv.appendChild(solText);
-                        solutionContainer.appendChild(solutionDiv);
-                    });
                 }
             }, 2000);
         }
@@ -1353,5 +1866,4 @@
         }
     </script>
 </body>
-
 </html>
