@@ -65,7 +65,7 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 20px 40px; 
+            padding: 15px 20px; 
             background: rgba(255,255,255,0.95); 
             backdrop-filter: blur(20px);
             position: sticky; 
@@ -78,42 +78,53 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo-icon {
             background: var(--primary);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .logo-text {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--primary);
         }
 
         .logo-subtitle {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--accent);
             font-weight: 600;
             letter-spacing: 0.5px;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .logo-link:hover {
+            transform: translateY(-2px);
+            color: var(--accent);
         }
 
         /* Main Container */
         .container {
             display: flex;
             max-width: 1400px;
-            margin: 30px auto;
-            gap: 25px;
-            padding: 0 20px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 15px;
             min-height: 80vh;
         }
 
@@ -131,26 +142,29 @@
             z-index: 1000;
             opacity: 1;
             transition: opacity 0.3s;
+            padding: 15px;
         }
 
         .modal-content {
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 700px;
-            width: 90%;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 600px;
+            width: 100%;
             text-align: center;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transform: scale(1);
             transition: transform 0.3s;
             border: 4px solid var(--accent);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-title {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -158,43 +172,43 @@
         }
 
         .modal-subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--gray-600);
-            margin-bottom: 30px;
-            line-height: 1.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .start-btn {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(27, 100, 17, 0.3);
-            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(27, 100, 17, 0.3);
+            margin-top: 15px;
         }
 
         .start-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(27, 100, 17, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(27, 100, 17, 0.4);
         }
 
         .test-info {
             background: var(--light-blue);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
             text-align: left;
         }
 
         .info-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: center;
             font-weight: 600;
         }
@@ -202,9 +216,10 @@
         .info-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px dashed rgba(0,0,0,0.1);
+            font-size: 14px;
         }
 
         .info-item:last-child {
@@ -216,24 +231,24 @@
         /* Login Screen */
         .login-container {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             margin: 0 auto;
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--primary);
         }
 
         .login-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: left;
         }
 
@@ -242,17 +257,17 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark);
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .form-input {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: 2px solid #e5e7eb;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: border-color 0.3s;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .form-input:focus {
@@ -266,9 +281,9 @@
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -283,55 +298,55 @@
         }
 
         .login-btn:not(:disabled):hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(27, 100, 17, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(27, 100, 17, 0.4);
         }
 
         /* Instructions */
         .instructions-container {
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 800px;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 700px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--accent);
         }
 
         .instructions-title {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
         }
 
         .instructions-list {
             list-style-type: none;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .instructions-list li {
-            margin-bottom: 15px;
-            padding: 15px 15px 15px 60px;
+            margin-bottom: 12px;
+            padding: 12px 12px 12px 50px;
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1rem;
             background: var(--light-blue);
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 500;
         }
 
         .instructions-list li:before {
             content: "✓";
             position: absolute;
-            left: 20px;
+            left: 15px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent);
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             background: white;
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -343,25 +358,26 @@
         .timer-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             background: var(--primary);
             color: white;
-            padding: 8px 20px;
+            padding: 6px 15px;
             border-radius: 50px;
             font-weight: 600;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            font-size: 14px;
         }
 
         .timer {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 18px;
+            gap: 6px;
+            font-size: 16px;
         }
 
         .progress-container {
-            width: 200px;
-            height: 8px;
+            width: 150px;
+            height: 6px;
             background: #e5e7eb;
             border-radius: 10px;
             overflow: hidden;
@@ -379,14 +395,14 @@
         .questions-panel {
             flex: 1;
             background: var(--white);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--primary);
         }
 
         .question-number {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--gray-600);
             margin-bottom: 5px;
             font-weight: 600;
@@ -394,29 +410,30 @@
 
         .question-text {
             font-weight: 500;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.5;
-            padding: 15px;
+            padding: 12px;
             background: var(--light-blue);
-            border-radius: 10px;
+            border-radius: 8px;
             border-left: 4px solid var(--primary);
+            font-size: 16px;
         }
 
         .options-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 25px;
         }
 
         .option {
-            padding: 15px 20px;
+            padding: 12px 15px;
             border: 2px solid #e5e7eb;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 16px;
             display: flex;
             align-items: flex-start;
         }
@@ -429,20 +446,21 @@
         .option.selected {
             background: var(--light-green);
             border-color: var(--accent);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
         }
 
         .option .option-label {
             display: inline-block;
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             background: #e5e7eb;
             border-radius: 50%;
             text-align: center;
-            line-height: 35px;
-            margin-right: 15px;
+            line-height: 30px;
+            margin-right: 12px;
             font-weight: 600;
             flex-shrink: 0;
+            font-size: 14px;
         }
 
         .option.selected .option-label {
@@ -454,11 +472,13 @@
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .nav-btn {
-            padding: 12px 30px;
+            padding: 10px 20px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
@@ -466,8 +486,8 @@
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 16px;
+            gap: 6px;
+            font-size: 14px;
         }
 
         .nav-btn.prev {
@@ -478,61 +498,61 @@
         .nav-btn.next {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            box-shadow: 0 4px 15px rgba(26, 75, 140, 0.3);
+            box-shadow: 0 4px 12px rgba(26, 75, 140, 0.3);
         }
 
         .nav-btn.submit {
             background: linear-gradient(135deg, var(--secondary), #b71c1c);
             color: white;
-            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
         }
 
         .nav-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Sidebar */
         .sidebar {
-            width: 300px;
+            width: 280px;
             background: var(--white);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             align-self: flex-start;
             border: 3px solid var(--accent);
         }
 
         .sidebar-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
         }
 
         .question-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .grid-item {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             background: #e5e7eb;
             transition: all 0.3s;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .grid-item:hover {
@@ -555,18 +575,18 @@
 
         .test-info {
             background: var(--light-green);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
         }
 
         .info-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .info-item:last-child {
@@ -578,25 +598,25 @@
         /* Results Screen */
         .results-container {
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 1000px;
-            margin: 50px auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 30px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border: 3px solid var(--primary);
         }
 
         .results-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: center;
         }
 
         .score-display {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin: 30px 0;
+            margin: 20px 0;
             text-align: center;
         }
 
@@ -605,14 +625,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .solution-link {
             display: block;
             text-align: center;
-            margin: 30px 0;
-            font-size: 1.2rem;
+            margin: 25px 0;
+            font-size: 1.1rem;
         }
 
         .solution-link a {
@@ -622,7 +642,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border: 2px solid var(--primary);
             border-radius: 8px;
             transition: all 0.3s;
@@ -631,20 +651,77 @@
         .solution-link a:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
         }
 
         /* Section Indicator */
         .section-indicator {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 4px 12px;
             background: var(--light-blue);
-            border-radius: 20px;
-            font-size: 14px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        /* Question Review */
+        .question-review {
+            margin: 25px 0;
+            padding: 20px;
+            background: var(--light-blue);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .review-title {
+            font-size: 1.2rem;
+            color: var(--primary);
             margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .review-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .review-options {
+            margin-left: 20px;
+        }
+
+        .review-option {
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .correct {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .incorrect {
+            color: var(--error);
+            font-weight: 600;
+        }
+
+        .review-answer {
+            margin-top: 10px;
+            padding: 8px;
+            background: var(--light-green);
+            border-radius: 5px;
+            font-weight: 600;
         }
 
         /* Floating shapes */
@@ -656,8 +733,8 @@
         }
 
         .shape.circle { 
-            width: 150px; 
-            height: 150px; 
+            width: 120px; 
+            height: 120px; 
             border-radius: 50%; 
             background: var(--accent); 
             top: 10%; 
@@ -665,20 +742,20 @@
         }
 
         .shape.square { 
-            width: 120px; 
-            height: 120px; 
+            width: 100px; 
+            height: 100px; 
             background: var(--blue); 
             bottom: 15%; 
             right: 10%; 
-            border-radius: 20px;
+            border-radius: 15px;
         }
 
         .shape.triangle {
             width: 0;
             height: 0;
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-bottom: 100px solid var(--primary);
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 80px solid var(--primary);
             top: 20%;
             right: 20%;
             animation-delay: -2s;
@@ -686,17 +763,38 @@
 
         @keyframes float { 
             0%, 100% { transform: translateY(0) rotate(0deg); } 
-            50% { transform: translateY(-20px) rotate(5deg); } 
+            50% { transform: translateY(-15px) rotate(5deg); } 
         }
 
         /* Disclaimer */
         .disclaimer {
             background: var(--light-pink);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-            font-size: 14px;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 12px;
             border-left: 4px solid var(--secondary);
+        }
+
+        /* About Section */
+        .about-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .about-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .about-link:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
         /* Responsive */
@@ -716,16 +814,16 @@
 
         @media (max-width: 768px) {
             .modal-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
             .login-container, .instructions-container, .results-container {
-                padding: 25px;
+                padding: 20px;
             }
             
             .navigation {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px;
             }
             
             .nav-btn {
@@ -734,7 +832,17 @@
             }
             
             .question-text {
-                font-size: 18px;
+                font-size: 15px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .timer-container {
+                margin-top: 10px;
             }
         }
 
@@ -743,42 +851,47 @@
                 grid-template-columns: repeat(5, 1fr);
             }
             
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-            }
-            
-            .timer-container {
-                justify-content: center;
-                width: 100%;
-            }
-            
             .progress-container {
-                width: 150px;
+                width: 120px;
+            }
+
+            .modal-content {
+                padding: 20px 15px;
+            }
+
+            .results-container {
+                padding: 20px 15px;
+            }
+
+            .results-title {
+                font-size: 1.5rem;
+            }
+
+            .score-display {
+                font-size: 2rem;
             }
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             color: var(--gray-600);
-            font-size: 14px;
-            margin-top: 30px;
+            font-size: 12px;
+            margin-top: 20px;
             background: rgba(255,255,255,0.8);
             border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         /* Loading Spinner */
         .spinner {
-            width: 60px;
-            height: 60px;
-            border: 5px solid rgba(76, 175, 80, 0.2);
-            border-top: 5px solid var(--accent);
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(76, 175, 80, 0.2);
+            border-top: 4px solid var(--accent);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 40px auto;
+            margin: 30px auto;
         }
 
         @keyframes spin {
@@ -799,8 +912,10 @@
                 <i class="fas fa-graduation-cap"></i>
             </div>
             <div>
-                <div class="logo-text">BIHAR D.El.Ed. Practice Test</div>
-                <div class="logo-subtitle">By Symbiotic Learning</div>
+                <a href="https://symbioticlearning.com/" class="logo-link" target="_blank">
+                    <div class="logo-text">BIHAR D.El.Ed. Practice Test</div>
+                    <div class="logo-subtitle">By Symbiotic Learning Begusarai</div>
+                </a>
             </div>
         </div>
         
@@ -819,13 +934,13 @@
     <div class="modal-overlay" id="welcomeModal">
         <div class="modal-content">
             <h1 class="modal-title">BIHAR D.El.Ed. Entrance Exam 2025</h1>
-            <p class="modal-subtitle">This practice test evaluates your knowledge in Mathematics, English, and Urdu. Approach with confidence—this is an opportunity to demonstrate your knowledge and identify areas for growth.</p>
+            <p class="modal-subtitle">This practice test evaluates your knowledge in Urdu, Hindi, English, and Mathematics. Approach with confidence—this is an opportunity to demonstrate your knowledge and identify areas for growth.</p>
             
             <div class="test-info">
                 <div class="info-title">Test Information</div>
                 <div class="info-item">
                     <span>Total Questions:</span>
-                    <span>50</span>
+                    <span>60</span>
                 </div>
                 <div class="info-item">
                     <span>Duration:</span>
@@ -833,7 +948,7 @@
                 </div>
                 <div class="info-item">
                     <span>Sections:</span>
-                    <span>Mathematics, English, Urdu</span>
+                    <span>Urdu, Hindi, English, Mathematics</span>
                 </div>
                 <div class="info-item">
                     <span>Scoring:</span>
@@ -843,6 +958,12 @@
             
             <div class="disclaimer">
                 <strong>Disclaimer:</strong> We are an educational institution guiding students for different competitive examinations. This portal is only for practice purposes and we are not affiliated with the exam conducting body in any way.
+            </div>
+
+            <div class="about-section">
+                <a href="https://symbioticlearning.com/" class="about-link" target="_blank">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
             </div>
             
             <button class="start-btn" id="startBtn">Begin Practice Test</button>
@@ -870,8 +991,8 @@
         <div class="instructions-container">
             <h2 class="instructions-title">Test Guidelines</h2>
             <ul class="instructions-list">
-                <li>You have <strong>90 minutes</strong> to complete all 50 questions. The timer will be visible throughout the test.</li>
-                <li>This assessment covers three sections: Mathematics (20 questions), English (15 questions), and Urdu (15 questions).</li>
+                <li>You have <strong>90 minutes</strong> to complete all 60 questions. The timer will be visible throughout the test.</li>
+                <li>This assessment covers four sections: Urdu (15 questions), Hindi (10 questions), English (15 questions), and Mathematics (20 questions).</li>
                 <li>Each question carries equal weight (1 mark). There is no penalty for incorrect answers.</li>
                 <li>Use the question palette to navigate between questions. Answered questions will be highlighted in green.</li>
                 <li>You can change your answers at any time before submission by returning to the question.</li>
@@ -886,8 +1007,8 @@
     <!-- Test Interface -->
     <div class="container" id="testInterface" style="display:none;">
         <div class="questions-panel">
-            <div class="question-number" id="questionNumber">Question 1 of 50</div>
-            <div class="section-indicator" id="sectionIndicator">Mathematics</div>
+            <div class="question-number" id="questionNumber">Question 1 of 60</div>
+            <div class="section-indicator" id="sectionIndicator">Urdu</div>
             <div class="question-text" id="questionText">
                 <!-- Question will appear here -->
             </div>
@@ -921,7 +1042,7 @@
             <div class="test-info">
                 <div class="info-item">
                     <span>Questions:</span>
-                    <span>50</span>
+                    <span>60</span>
                 </div>
                 <div class="info-item">
                     <span>Answered:</span>
@@ -929,7 +1050,7 @@
                 </div>
                 <div class="info-item">
                     <span>Remaining:</span>
-                    <span id="unansweredCount">50</span>
+                    <span id="unansweredCount">60</span>
                 </div>
                 <div class="info-item">
                     <span>Current:</span>
@@ -945,7 +1066,11 @@
             <div class="spinner" id="loadingSpinner"></div>
             <div id="resultsContent" style="display:none;">
                 <h2 class="results-title">Assessment Results</h2>
-                <div class="score-display">Your Score: <span class="score-value" id="scoreDisplay">0/50</span></div>
+                <div class="score-display">Your Score: <span class="score-value" id="scoreDisplay">0/60</span></div>
+                
+                <div class="question-review" id="questionReview">
+                    <!-- Question review will be populated by JavaScript -->
+                </div>
                 
                 <div class="solution-link">
                     <a href="https://clprogers.page.link/t96T" target="_blank">
@@ -953,16 +1078,16 @@
                     </a>
                 </div>
                 
-                <div class="modal-content" id="finalModal" style="margin-top:30px;">
+                <div class="modal-content" id="finalModal" style="margin-top:25px;">
                     <h3>You've completed the practice test! Download our app for more practice tests and detailed solutions.</h3>
-                    <button class="start-btn" style="margin-top:20px;" onclick="location.reload()">Exit Assessment</button>
+                    <button class="start-btn" style="margin-top:15px;" onclick="location.reload()">Exit Assessment</button>
                 </div>
             </div>
         </div>
     </div>
     
     <footer>
-        <p>© 2023 Symbiotic Learning. All rights reserved. This assessment is for educational purposes only.</p>
+        <p>© 2023 <a href="https://symbioticlearning.com/" style="color: var(--primary);">Symbiotic Learning Begusarai</a>. All rights reserved. This assessment is for educational purposes only.</p>
         <p>Unauthorized access or distribution of test content is strictly prohibited.</p>
     </footer>
     
@@ -971,435 +1096,11 @@
         const VALID_NAME = "symbiotic";
         const VALID_PASSCODE = "urdu123";
         
-        // Questions array with 50 questions (20 Maths, 15 English, 15 Urdu)
+        // Questions array with 60 questions (15 Urdu, 10 Hindi, 15 English, 20 Maths)
         const questions = [
-            // Mathematics Questions (1-20)
+            // Urdu Questions (1-15)
             {
                 id: 1,
-                section: "Mathematics",
-                text: "(sec A + tan A)(1 − sin A) =",
-                options: [
-                    "sec A",
-                    "sin A",
-                    "csc A",
-                    "cos A"
-                ],
-                answer: 3
-            },
-            {
-                id: 2,
-                section: "Mathematics",
-                text: "एक बिंदु होता है-",
-                options: [
-                    "एक विमीय",
-                    "द्विविमीय",
-                    "त्रिविमीय",
-                    "इनमें से कोई नहीं"
-                ],
-                answer: 0
-            },
-            {
-                id: 3,
-                section: "Mathematics",
-                text: "दो संख्याओं a और 18 का LCM = 36 तथा HCF = 2 है, तो a का मान होगा-",
-                options: [
-                    "2",
-                    "3",
-                    "4",
-                    "1"
-                ],
-                answer: 2
-            },
-            {
-                id: 4,
-                section: "Mathematics",
-                text: "रैखिक समीकरण x + y = 10 का आलेख होगा-",
-                options: [
-                    "उदग्र रेखा",
-                    "क्षैतिज रेखा",
-                    "सरल रेखा",
-                    "इनमें से कोई नहीं"
-                ],
-                answer: 2
-            },
-            {
-                id: 5,
-                section: "Mathematics",
-                text: "यदि 2x + 3y = 7 और 2ax + (a + b)y = 8 के अनंत हल हों, तो-",
-                options: [
-                    "a = 2b",
-                    "b = 2a",
-                    "a + 2b = 0",
-                    "2a + b = 0"
-                ],
-                answer: 1
-            },
-            {
-                id: 6,
-                section: "Mathematics",
-                text: "यदि (0, 0), (3, √3), (3, P) एक समबाहु त्रिभुज बनाते हैं तो P =?",
-                options: [
-                    "1",
-                    "2",
-                    "3",
-                    "√3 − √3"
-                ],
-                answer: 1
-            },
-            {
-                id: 7,
-                section: "Mathematics",
-                text: "यदि घन का आयतन 1728 cm³ है, तो इसकी भुजा =?",
-                options: [
-                    "7 cm",
-                    "12 cm",
-                    "18 cm",
-                    "19 cm"
-                ],
-                answer: 1
-            },
-            {
-                id: 8,
-                section: "Mathematics",
-                text: "7 cm त्रिज्या वाले वृत्त में केंद्र पर 30° का चाप की लंबाई होगी-",
-                options: [
-                    "11 cm",
-                    "11/3 cm",
-                    "22/3 cm",
-                    "22 cm"
-                ],
-                answer: 2
-            },
-            {
-                id: 9,
-                section: "Mathematics",
-                text: "समांतर चतुर्भुज के दो आसन्न कोणों के समद्विभाजक प्रतिच्छेद करते हैं-",
-                options: [
-                    "30°",
-                    "45°",
-                    "60°",
-                    "90°"
-                ],
-                answer: 3
-            },
-            {
-                id: 10,
-                section: "Mathematics",
-                text: "त्रिभुज ABC की भुजाएँ BC = a, CA = b, AB = c हों और अर्धपरिधि s हो। वृत्त यदि BC पर D बिंदु पर स्पर्श करता है, तो BD =?",
-                options: [
-                    "s − a",
-                    "s − b",
-                    "s − c",
-                    "s − (a + c)"
-                ],
-                answer: 0
-            },
-            {
-                id: 11,
-                section: "Mathematics",
-                text: "एक अपरिमेय संख्या के लिए सही कथन-",
-                options: [
-                    "दशमलव रूप सांत",
-                    "दशमलव रूप असांत आवर्ती",
-                    "दशमलव रूप असांत अनावर्ती",
-                    "कोई नहीं"
-                ],
-                answer: 2
-            },
-            {
-                id: 12,
-                section: "Mathematics",
-                text: "यदि बिंदु (a, 0), (0, b), (1, 1) कोलिनियर हों, तो a + b =?",
-                options: [
-                    "−ab",
-                    "ab",
-                    "1/ab",
-                    "2/ab"
-                ],
-                answer: 1
-            },
-            {
-                id: 13,
-                section: "Mathematics",
-                text: "यदि f(x) = (k² + 4)x² + 13x + 4k के शून्यक व्युत्क्रमानुपाती हों, तो k =?",
-                options: [
-                    "-2",
-                    "-1",
-                    "2",
-                    "1"
-                ],
-                answer: 2
-            },
-            {
-                id: 14,
-                section: "Mathematics",
-                text: "तोरण (Histogram) के वर्ग-अंतराल होने चाहिए-",
-                options: [
-                    "समावेशिक",
-                    "अपवर्जी",
-                    "दोनों",
-                    "कोई नहीं"
-                ],
-                answer: 1
-            },
-            {
-                id: 15,
-                section: "Mathematics",
-                text: "दो प्रतिच्छेदी रेखाओं के सामान्य बिंदुओं की संख्या-",
-                options: [
-                    "0",
-                    "2",
-                    "1",
-                    "अनंत"
-                ],
-                answer: 2
-            },
-            {
-                id: 16,
-                section: "Mathematics",
-                text: "₹15000 की मशीन ₹2250 अग्रिम व 2 अर्द्धवार्षिक किस्तों पर खरीदी गई, ब्याज 8% प्रतिवर्ष (अर्द्धवार्षिक चक्रवृद्धि)। प्रत्येक किस्त की राशि =?",
-                options: [
-                    "6760",
-                    "6740",
-                    "6860",
-                    "6840"
-                ],
-                answer: 0
-            },
-            {
-                id: 17,
-                section: "Mathematics",
-                text: "एक समबाहु त्रिभुज का क्षेत्रफल (√3/4)*भुजा² होता है। यदि भुजा 4 cm है, तो क्षेत्रफल है-",
-                options: [
-                    "4√3",
-                    "8√3",
-                    "12√3",
-                    "16√3"
-                ],
-                answer: 0
-            },
-            {
-                id: 18,
-                section: "Mathematics",
-                text: "10 सेमी त्रिज्या वाले वृत्त की परिधि क्या है?",
-                options: [
-                    "20π",
-                    "30π",
-                    "40π",
-                    "50π"
-                ],
-                answer: 0
-            },
-            {
-                id: 19,
-                section: "Mathematics",
-                text: "2, 3, 5, 7, 11, ... अगली संख्या है?",
-                options: [
-                    "13",
-                    "15",
-                    "17",
-                    "19"
-                ],
-                answer: 0
-            },
-            {
-                id: 20,
-                section: "Mathematics",
-                text: "1 से 100 तक कितनी अभाज्य संख्याएँ हैं?",
-                options: [
-                    "25",
-                    "26",
-                    "27",
-                    "28"
-                ],
-                answer: 0
-            },
-            
-            // English Questions (21-35)
-            {
-                id: 21,
-                section: "English",
-                text: "Not only Mathematics but also Science ______ important.",
-                options: [
-                    "were",
-                    "is",
-                    "have",
-                    "are"
-                ],
-                answer: 1
-            },
-            {
-                id: 22,
-                section: "English",
-                text: "Black sheep",
-                options: [
-                    "A quarrelsome person",
-                    "An honourable member of a group",
-                    "A Kind man",
-                    "A disreputable member of a group"
-                ],
-                answer: 3
-            },
-            {
-                id: 23,
-                section: "English",
-                text: "Birds of the same feather",
-                options: [
-                    "Persons of the same height",
-                    "Persons of the same character",
-                    "People working together",
-                    "Birds flying together"
-                ],
-                answer: 1
-            },
-            {
-                id: 24,
-                section: "English",
-                text: "The Council made its ______ decision.",
-                options: [
-                    "having",
-                    "have",
-                    "have had",
-                    "has"
-                ],
-                answer: 0
-            },
-            {
-                id: 25,
-                section: "English",
-                text: "The quality of products ______ over time.",
-                options: [
-                    "have degrading",
-                    "were degraded",
-                    "has been degrading",
-                    "are degrading"
-                ],
-                answer: 2
-            },
-            {
-                id: 26,
-                section: "English",
-                text: "Which one of the following punctuation marks is used to show range of numbers, dates or time?",
-                options: [
-                    "Semicolon",
-                    "Exclamation mark",
-                    "Dash",
-                    "Question mark"
-                ],
-                answer: 2
-            },
-            {
-                id: 27,
-                section: "English",
-                text: "We drove him out of the train. [Passive Voice]",
-                options: [
-                    "He was drove out of the train.",
-                    "He was being driven out of train by us.",
-                    "He has been driven out of the train.",
-                    "He was driven out of the train."
-                ],
-                answer: 3
-            },
-            {
-                id: 28,
-                section: "English",
-                text: "By leaps and bounds",
-                options: [
-                    "Playing wisely",
-                    "Driving fast",
-                    "Growing rapidly",
-                    "Moving aimlessly"
-                ],
-                answer: 2
-            },
-            {
-                id: 29,
-                section: "English",
-                text: "Eight kilometres ______ a long distance.",
-                options: [
-                    "is",
-                    "are",
-                    "have",
-                    "were"
-                ],
-                answer: 0
-            },
-            {
-                id: 30,
-                section: "English",
-                text: "Sameer said, \"I will come back in fifteen minutes.\" [Indirect speech] Sameer told that he ______ back in fifteen minutes.",
-                options: [
-                    "would come",
-                    "Will come",
-                    "shall came",
-                    "should come"
-                ],
-                answer: 0
-            },
-            {
-                id: 31,
-                section: "English",
-                text: "You will get the job on the condition that you ______ hard.",
-                options: [
-                    "work",
-                    "will work",
-                    "have work",
-                    "worked"
-                ],
-                answer: 0
-            },
-            {
-                id: 32,
-                section: "English",
-                text: "I drove to the library instead ______ I was too lazy to walk.",
-                options: [
-                    "moreover",
-                    "despite",
-                    "however",
-                    "because"
-                ],
-                answer: 3
-            },
-            {
-                id: 33,
-                section: "English",
-                text: "English is spoken all ______ the world.",
-                options: [
-                    "beside",
-                    "from",
-                    "above",
-                    "over"
-                ],
-                answer: 3
-            },
-            {
-                id: 34,
-                section: "English",
-                text: "She hopes to succeed. [Non-finite verb]",
-                options: [
-                    "To",
-                    "She",
-                    "Hopes",
-                    "Succeed"
-                ],
-                answer: 0
-            },
-            {
-                id: 35,
-                section: "English",
-                text: "Exclamation mark is generally used to show",
-                options: [
-                    "Strong Feeling",
-                    "Sadness",
-                    "All",
-                    "Happiness"
-                ],
-                answer: 0
-            },
-            
-            // Urdu Questions (36-50)
-            {
-                id: 36,
                 section: "Urdu",
                 text: "حمد کے لغوی معنی کیا ہیں؟",
                 options: [
@@ -1411,7 +1112,7 @@
                 answer: 0
             },
             {
-                id: 37,
+                id: 2,
                 section: "Urdu",
                 text: "اردو شاعری میں حمد کس صنف میں شامل ہے؟",
                 options: [
@@ -1423,7 +1124,7 @@
                 answer: 2
             },
             {
-                id: 38,
+                id: 3,
                 section: "Urdu",
                 text: "حمد کے اشعار میں کس کی صفات بیان کی جاتی ہیں؟",
                 options: [
@@ -1435,7 +1136,7 @@
                 answer: 0
             },
             {
-                id: 39,
+                id: 4,
                 section: "Urdu",
                 text: "شاعر حمد میں خدا کی کن صفات کو بیان کرتا ہے؟",
                 options: [
@@ -1447,7 +1148,7 @@
                 answer: 0
             },
             {
-                id: 40,
+                id: 5,
                 section: "Urdu",
                 text: "اردو کا ایسا کون سا شاعر ہے جس نے حمد نہ کہی ہو؟",
                 options: [
@@ -1459,7 +1160,7 @@
                 answer: 0
             },
             {
-                id: 41,
+                id: 6,
                 section: "Urdu",
                 text: "کلام کی شروعات کس صنف کے ساتھ کی جاتی ہے؟",
                 options: [
@@ -1471,7 +1172,7 @@
                 answer: 0
             },
             {
-                id: 42,
+                id: 7,
                 section: "Urdu",
                 text: "شبنم کمالی کا تعلق کس ریاست سے ہے؟",
                 options: [
@@ -1483,7 +1184,7 @@
                 answer: 0
             },
             {
-                id: 43,
+                id: 8,
                 section: "Urdu",
                 text: "شبنم کمالی کا اصل نام کیا ہے؟",
                 options: [
@@ -1495,7 +1196,7 @@
                 answer: 0
             },
             {
-                id: 44,
+                id: 9,
                 section: "Urdu",
                 text: "شبنم کمالی کی پیدائش کب ہوئی؟",
                 options: [
@@ -1507,7 +1208,7 @@
                 answer: 0
             },
             {
-                id: 45,
+                id: 10,
                 section: "Urdu",
                 text: "شبنم کمالی نے اپنی زندگی کا بیشتر حصہ کس کام میں صرف کیا؟",
                 options: [
@@ -1519,7 +1220,7 @@
                 answer: 0
             },
             {
-                id: 46,
+                id: 11,
                 section: "Urdu",
                 text: "شبنم کمالی کے نعتیہ مجموعے میں کون سا شامل ہے؟",
                 options: [
@@ -1531,7 +1232,7 @@
                 answer: 0
             },
             {
-                id: 47,
+                id: 12,
                 section: "Urdu",
                 text: "حمد اور نعت میں کیا فرق ہے؟",
                 options: [
@@ -1543,7 +1244,7 @@
                 answer: 0
             },
             {
-                id: 48,
+                id: 13,
                 section: "Urdu",
                 text: "منقبت کس کی تعریف کے لئے کہی جاتی ہے؟",
                 options: [
@@ -1555,7 +1256,7 @@
                 answer: 0
             },
             {
-                id: 49,
+                id: 14,
                 section: "Urdu",
                 text: "قصیدہ کس کے اوصاف حمیدہ بیان کرتا ہے؟",
                 options: [
@@ -1567,7 +1268,7 @@
                 answer: 0
             },
             {
-                id: 50,
+                id: 15,
                 section: "Urdu",
                 text: "حمد کے اشعار میں خدا کی کون سی صفت بیان نہیں کی جاتی؟",
                 options: [
@@ -1575,6 +1276,552 @@
                     "یکتا ہونا",
                     "قادر ہونا",
                     "خالق ہونا"
+                ],
+                answer: 0
+            },
+            
+            // Hindi Questions (16-25)
+            {
+                id: 16,
+                section: "Hindi",
+                text: "निम्नलिखित में से कौन सा शब्द संज्ञा है?",
+                options: [
+                    "खेलना",
+                    "सुंदर",
+                    "लड़का",
+                    "तेज"
+                ],
+                answer: 2
+            },
+            {
+                id: 17,
+                section: "Hindi",
+                text: "वाक्य 'वह पुस्तक पढ़ रहा है' में क्रिया क्या है?",
+                options: [
+                    "वह",
+                    "पुस्तक",
+                    "पढ़ रहा है",
+                    "है"
+                ],
+                answer: 2
+            },
+            {
+                id: 18,
+                section: "Hindi",
+                text: "किस वाक्य में विशेषण का प्रयोग हुआ है?",
+                options: [
+                    "राम पढ़ता है",
+                    "सीता गाती है",
+                    "वह लंबा लड़का है",
+                    "मोहन खेलता है"
+                ],
+                answer: 2
+            },
+            {
+                id: 19,
+                section: "Hindi",
+                text: "'आम' शब्द का बहुवचन रूप क्या है?",
+                options: [
+                    "आमों",
+                    "आम",
+                    "आमs",
+                    "आमे"
+                ],
+                answer: 0
+            },
+            {
+                id: 20,
+                section: "Hindi",
+                text: "किस शब्द में उपसर्ग का प्रयोग हुआ है?",
+                options: [
+                    "विद्यालय",
+                    "पाठशाला",
+                    "प्रवेश",
+                    "कक्षा"
+                ],
+                answer: 2
+            },
+            {
+                id: 21,
+                section: "Hindi",
+                text: "कौन सा शब्द स्त्रीलिंग है?",
+                options: [
+                    "पुस्तक",
+                    "लड़का",
+                    "घर",
+                    "कमरा"
+                ],
+                answer: 0
+            },
+            {
+                id: 22,
+                section: "Hindi",
+                text: "'सूरज' का पर्यायवाची शब्द क्या है?",
+                options: [
+                    "चाँद",
+                    "सूर्य",
+                    "तारा",
+                    "आकाश"
+                ],
+                answer: 1
+            },
+            {
+                id: 23,
+                section: "Hindi",
+                text: "किस वाक्य में कर्मवाच्य का प्रयोग हुआ है?",
+                options: [
+                    "राम पुस्तक पढ़ता है",
+                    "राम से पुस्तक पढ़ी जाती है",
+                    "राम पढ़ रहा है",
+                    "राम ने पुस्तक पढ़ी"
+                ],
+                answer: 1
+            },
+            {
+                id: 24,
+                section: "Hindi",
+                text: "'अंधा' का विलोम शब्द क्या है?",
+                options: [
+                    "बहरा",
+                    "गूंगा",
+                    "आंख",
+                    "आंखोंवाला"
+                ],
+                answer: 3
+            },
+            {
+                id: 25,
+                section: "Hindi",
+                text: "किस शब्द में प्रत्यय का प्रयोग हुआ है?",
+                options: [
+                    "पढ़ना",
+                    "लिखावट",
+                    "स्कूल",
+                    "शिक्षक"
+                ],
+                answer: 1
+            },
+            
+            // English Questions (26-40)
+            {
+                id: 26,
+                section: "English",
+                text: "Not only Mathematics but also Science ______ important.",
+                options: [
+                    "were",
+                    "is",
+                    "have",
+                    "are"
+                ],
+                answer: 1
+            },
+            {
+                id: 27,
+                section: "English",
+                text: "Black sheep",
+                options: [
+                    "A quarrelsome person",
+                    "An honourable member of a group",
+                    "A Kind man",
+                    "A disreputable member of a group"
+                ],
+                answer: 3
+            },
+            {
+                id: 28,
+                section: "English",
+                text: "Birds of the same feather",
+                options: [
+                    "Persons of the same height",
+                    "Persons of the same character",
+                    "People working together",
+                    "Birds flying together"
+                ],
+                answer: 1
+            },
+            {
+                id: 29,
+                section: "English",
+                text: "The Council made its ______ decision.",
+                options: [
+                    "having",
+                    "have",
+                    "have had",
+                    "has"
+                ],
+                answer: 0
+            },
+            {
+                id: 30,
+                section: "English",
+                text: "The quality of products ______ over time.",
+                options: [
+                    "have degrading",
+                    "were degraded",
+                    "has been degrading",
+                    "are degrading"
+                ],
+                answer: 2
+            },
+            {
+                id: 31,
+                section: "English",
+                text: "Which one of the following punctuation marks is used to show range of numbers, dates or time?",
+                options: [
+                    "Semicolon",
+                    "Exclamation mark",
+                    "Dash",
+                    "Question mark"
+                ],
+                answer: 2
+            },
+            {
+                id: 32,
+                section: "English",
+                text: "We drove him out of the train. [Passive Voice]",
+                options: [
+                    "He was drove out of the train.",
+                    "He was being driven out of train by us.",
+                    "He has been driven out of the train.",
+                    "He was driven out of the train."
+                ],
+                answer: 3
+            },
+            {
+                id: 33,
+                section: "English",
+                text: "By leaps and bounds",
+                options: [
+                    "Playing wisely",
+                    "Driving fast",
+                    "Growing rapidly",
+                    "Moving aimlessly"
+                ],
+                answer: 2
+            },
+            {
+                id: 34,
+                section: "English",
+                text: "Eight kilometres ______ a long distance.",
+                options: [
+                    "is",
+                    "are",
+                    "have",
+                    "were"
+                ],
+                answer: 0
+            },
+            {
+                id: 35,
+                section: "English",
+                text: "Sameer said, \"I will come back in fifteen minutes.\" [Indirect speech] Sameer told that he ______ back in fifteen minutes.",
+                options: [
+                    "would come",
+                    "Will come",
+                    "shall came",
+                    "should come"
+                ],
+                answer: 0
+            },
+            {
+                id: 36,
+                section: "English",
+                text: "You will get the job on the condition that you ______ hard.",
+                options: [
+                    "work",
+                    "will work",
+                    "have work",
+                    "worked"
+                ],
+                answer: 0
+            },
+            {
+                id: 37,
+                section: "English",
+                text: "I drove to the library instead ______ I was too lazy to walk.",
+                options: [
+                    "moreover",
+                    "despite",
+                    "however",
+                    "because"
+                ],
+                answer: 3
+            },
+            {
+                id: 38,
+                section: "English",
+                text: "English is spoken all ______ the world.",
+                options: [
+                    "beside",
+                    "from",
+                    "above",
+                    "over"
+                ],
+                answer: 3
+            },
+            {
+                id: 39,
+                section: "English",
+                text: "She hopes to succeed. [Non-finite verb]",
+                options: [
+                    "To",
+                    "She",
+                    "Hopes",
+                    "Succeed"
+                ],
+                answer: 0
+            },
+            {
+                id: 40,
+                section: "English",
+                text: "Exclamation mark is generally used to show",
+                options: [
+                    "Strong Feeling",
+                    "Sadness",
+                    "All",
+                    "Happiness"
+                ],
+                answer: 0
+            },
+            
+            // Mathematics Questions (41-60)
+            {
+                id: 41,
+                section: "Mathematics",
+                text: "(sec A + tan A)(1 − sin A) =",
+                options: [
+                    "sec A",
+                    "sin A",
+                    "csc A",
+                    "cos A"
+                ],
+                answer: 3
+            },
+            {
+                id: 42,
+                section: "Mathematics",
+                text: "एक बिंदु होता है-",
+                options: [
+                    "एक विमीय",
+                    "द्विविमीय",
+                    "त्रिविमीय",
+                    "इनमें से कोई नहीं"
+                ],
+                answer: 0
+            },
+            {
+                id: 43,
+                section: "Mathematics",
+                text: "दो संख्याओं a और 18 का LCM = 36 तथा HCF = 2 है, तो a का मान होगा-",
+                options: [
+                    "2",
+                    "3",
+                    "4",
+                    "1"
+                ],
+                answer: 2
+            },
+            {
+                id: 44,
+                section: "Mathematics",
+                text: "रैखिक समीकरण x + y = 10 का आलेख होगा-",
+                options: [
+                    "उदग्र रेखा",
+                    "क्षैतिज रेखा",
+                    "सरल रेखा",
+                    "इनमें से कोई नहीं"
+                ],
+                answer: 2
+            },
+            {
+                id: 45,
+                section: "Mathematics",
+                text: "यदि 2x + 3y = 7 और 2ax + (a + b)y = 8 के अनंत हल हों, तो-",
+                options: [
+                    "a = 2b",
+                    "b = 2a",
+                    "a + 2b = 0",
+                    "2a + b = 0"
+                ],
+                answer: 1
+            },
+            {
+                id: 46,
+                section: "Mathematics",
+                text: "यदि (0, 0), (3, √3), (3, P) एक समबाहु त्रिभुज बनाते हैं तो P =?",
+                options: [
+                    "1",
+                    "2",
+                    "3",
+                    "√3 − √3"
+                ],
+                answer: 1
+            },
+            {
+                id: 47,
+                section: "Mathematics",
+                text: "यदि घन का आयतन 1728 cm³ है, तो इसकी भुजा =?",
+                options: [
+                    "7 cm",
+                    "12 cm",
+                    "18 cm",
+                    "19 cm"
+                ],
+                answer: 1
+            },
+            {
+                id: 48,
+                section: "Mathematics",
+                text: "7 cm त्रिज्या वाले वृत्त में केंद्र पर 30° का चाप की लंबाई होगी-",
+                options: [
+                    "11 cm",
+                    "11/3 cm",
+                    "22/3 cm",
+                    "22 cm"
+                ],
+                answer: 2
+            },
+            {
+                id: 49,
+                section: "Mathematics",
+                text: "समांतर चतुर्भुज के दो आसन्न कोणों के समद्विभाजक प्रतिच्छेद करते हैं-",
+                options: [
+                    "30°",
+                    "45°",
+                    "60°",
+                    "90°"
+                ],
+                answer: 3
+            },
+            {
+                id: 50,
+                section: "Mathematics",
+                text: "त्रिभुज ABC की भुजाएँ BC = a, CA = b, AB = c हों और अर्धपरिधि s हो। वृत्त यदि BC पर D बिंदु पर स्पर्श करता है, तो BD =?",
+                options: [
+                    "s − a",
+                    "s − b",
+                    "s − c",
+                    "s − (a + c)"
+                ],
+                answer: 0
+            },
+            {
+                id: 51,
+                section: "Mathematics",
+                text: "एक अपरिमेय संख्या के लिए सही कथन-",
+                options: [
+                    "दशमलव रूप सांत",
+                    "दशमलव रूप असांत आवर्ती",
+                    "दशमलव रूप असांत अनावर्ती",
+                    "कोई नहीं"
+                ],
+                answer: 2
+            },
+            {
+                id: 52,
+                section: "Mathematics",
+                text: "यदि बिंदु (a, 0), (0, b), (1, 1) कोलिनियर हों, तो a + b =?",
+                options: [
+                    "−ab",
+                    "ab",
+                    "1/ab",
+                    "2/ab"
+                ],
+                answer: 1
+            },
+            {
+                id: 53,
+                section: "Mathematics",
+                text: "यदि f(x) = (k² + 4)x² + 13x + 4k के शून्यक व्युत्क्रमानुपाती हों, तो k =?",
+                options: [
+                    "-2",
+                    "-1",
+                    "2",
+                    "1"
+                ],
+                answer: 2
+            },
+            {
+                id: 54,
+                section: "Mathematics",
+                text: "तोरण (Histogram) के वर्ग-अंतराल होने चाहिए-",
+                options: [
+                    "समावेशिक",
+                    "अपवर्जी",
+                    "दोनों",
+                    "कोई नहीं"
+                ],
+                answer: 1
+            },
+            {
+                id: 55,
+                section: "Mathematics",
+                text: "दो प्रतिच्छेदी रेखाओं के सामान्य बिंदुओं की संख्या-",
+                options: [
+                    "0",
+                    "2",
+                    "1",
+                    "अनंत"
+                ],
+                answer: 2
+            },
+            {
+                id: 56,
+                section: "Mathematics",
+                text: "₹15000 की मशीन ₹2250 अग्रिम व 2 अर्द्धवार्षिक किस्तों पर खरीदी गई, ब्याज 8% प्रतिवर्ष (अर्द्धवार्षिक चक्रवृद्धि)। प्रत्येक किस्त की राशि =?",
+                options: [
+                    "6760",
+                    "6740",
+                    "6860",
+                    "6840"
+                ],
+                answer: 0
+            },
+            {
+                id: 57,
+                section: "Mathematics",
+                text: "एक समबाहु त्रिभुज का क्षेत्रफल (√3/4)*भुजा² होता है। यदि भुजा 4 cm है, तो क्षेत्रफल है-",
+                options: [
+                    "4√3",
+                    "8√3",
+                    "12√3",
+                    "16√3"
+                ],
+                answer: 0
+            },
+            {
+                id: 58,
+                section: "Mathematics",
+                text: "10 सेमी त्रिज्या वाले वृत्त की परिधि क्या है?",
+                options: [
+                    "20π",
+                    "30π",
+                    "40π",
+                    "50π"
+                ],
+                answer: 0
+            },
+            {
+                id: 59,
+                section: "Mathematics",
+                text: "2, 3, 5, 7, 11, ... अगली संख्या है?",
+                options: [
+                    "13",
+                    "15",
+                    "17",
+                    "19"
+                ],
+                answer: 0
+            },
+            {
+                id: 60,
+                section: "Mathematics",
+                text: "1 से 100 तक कितनी अभाज्य संख्याएँ हैं?",
+                options: [
+                    "25",
+                    "26",
+                    "27",
+                    "28"
                 ],
                 answer: 0
             }
@@ -1615,6 +1862,7 @@
         const loadingSpinner = document.getElementById('loadingSpinner');
         const resultsContent = document.getElementById('resultsContent');
         const scoreDisplay = document.getElementById('scoreDisplay');
+        const questionReview = document.getElementById('questionReview');
         
         // Initialize the test
         function initTest() {
@@ -1649,7 +1897,7 @@
             // Apply appropriate font based on section
             if (question.section === "Urdu") {
                 questionText.className = "question-text urdu-text";
-            } else if (question.section === "Mathematics") {
+            } else if (question.section === "Hindi") {
                 questionText.className = "question-text hindi-text";
             } else {
                 questionText.className = "question-text";
@@ -1753,10 +2001,48 @@
             }, 1000);
         }
         
+        // Generate question review HTML
+        function generateQuestionReview() {
+            let reviewHTML = '<div class="review-title">Question-wise Performance</div>';
+            
+            questions.forEach((q, i) => {
+                const userAnswer = userAnswers[i];
+                const isCorrect = userAnswer === q.answer;
+                
+                reviewHTML += `
+                    <div class="review-item">
+                        <div class="review-question">${i+1}. ${q.text}</div>
+                        <div class="review-options">
+                `;
+                
+                q.options.forEach((option, j) => {
+                    let optionClass = '';
+                    if (j === q.answer) {
+                        optionClass = 'correct';
+                    } else if (j === userAnswer && !isCorrect) {
+                        optionClass = 'incorrect';
+                    }
+                    
+                    reviewHTML += `<div class="review-option ${optionClass}">${String.fromCharCode(65 + j)}. ${option}</div>`;
+                });
+                
+                reviewHTML += `
+                        </div>
+                        <div class="review-answer">
+                            Your answer: ${userAnswer !== null ? String.fromCharCode(65 + userAnswer) : 'Not attempted'} 
+                            ${isCorrect ? '✓ Correct' : userAnswer !== null ? '✗ Incorrect' : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            return reviewHTML;
+        }
+        
         // Submit test
         function submitTest() {
             if (!testInterface || !resultsScreen || !loadingSpinner || 
-                !resultsContent || !scoreDisplay) {
+                !resultsContent || !scoreDisplay || !questionReview) {
                 return;
             }
             
@@ -1780,6 +2066,11 @@
                 // Display score
                 if (scoreDisplay) {
                     scoreDisplay.innerHTML = `${score}<span style="font-size:2rem;">/</span>${questions.length}`;
+                }
+                
+                // Generate question review
+                if (questionReview) {
+                    questionReview.innerHTML = generateQuestionReview();
                 }
             }, 2000);
         }
